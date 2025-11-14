@@ -1,5 +1,5 @@
 # **FinPal – Finance Dashboard** 💰📊
-*A personal finance visualization tool built with Streamlit.*
+*A personal finance visualization tool built with Pandas, Plotly, JSON, and Streamlit.*
 
 FinPal is an interactive finance dashboard that helps users upload their bank statements, categorize expenses, and view insights into their spending behavior.  
 Designed with clarity and ease of use in mind, FinPal turns raw financial data into meaningful visual analytics.
