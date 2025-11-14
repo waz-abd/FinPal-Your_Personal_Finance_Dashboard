@@ -79,6 +79,7 @@ def main():
             credits_df = df[df["Debit/Credit"] == "Credit"].copy()
 
             st.session_state.debits_df = debits_df.copy()
+            st.session_state.credits_df = credits_df.copy()
 
             tab1, tab2 = st.tabs(["Expenses (Debits)", "Payments (Credits)"])
 
@@ -142,12 +143,31 @@ def main():
                     category_totals,
                     values="Amount",
                     names="Category",
-                    tile="Expenses by Category"
+                    title="Expenses by Category"
                 )
                 st.plotly_chart(fig, use_container_width=True)
 
             with tab2:
+                st.subheader("Paymemts Summary")
+                total_payments = credits_df["Amount"].sum()
+                st.metric("Total Payments", f"{total_payments:,.2f} CAD")
                 st.write(credits_df)
+
+                edited_credit_df = st.data_editor(
+                    st.session_state.credits_df[[
+                        "Date", "Details", "Amount", "Category"]],
+                    column_config={
+                        "Date": st.column_config.DateColumn("Date", format="DD/MM/YYYY"),
+                        "Amount": st.column_config.NumberColumn("Amount", format="%.2f CAD"),
+                        "Category": st.column_config.SelectboxColumn(
+                            "Category",
+                            options=list(st.session_state.categories.keys())
+                        )
+                    },
+                    hide_index=True,
+                    use_container_width=True,
+                    key="category_credit_editor"
+                )
 
 
 main()
