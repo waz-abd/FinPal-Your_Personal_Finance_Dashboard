@@ -79,7 +79,7 @@ def add_keyword_to_category(category, keyword):
 
 # ---------- MAIN APP ----------
 def main():
-    st.title("FinPal 💰 – Finance Dashboard")
+    st.title("FinPal 💰 – Your Personal Finance Dashboard")
 
     uploaded_file = st.file_uploader(
         "Upload your Bank Statement Transaction CSV file here:",
