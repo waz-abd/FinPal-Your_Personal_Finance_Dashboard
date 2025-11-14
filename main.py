@@ -151,7 +151,6 @@ def main():
                 st.subheader("Paymemts Summary")
                 total_payments = credits_df["Amount"].sum()
                 st.metric("Total Payments", f"{total_payments:,.2f} CAD")
-                st.write(credits_df)
 
                 edited_credit_df = st.data_editor(
                     st.session_state.credits_df[[
