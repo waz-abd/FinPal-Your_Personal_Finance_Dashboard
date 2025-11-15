@@ -1,4 +1,4 @@
-# 💰📊 **FinPal – Your Personal Finance Dashboard**
+# 📊 **FinPal – Your Personal Finance Dashboard**
 *A personal finance visualization tool built with Pandas, Plotly, JSON, and Streamlit.*
 
 ## 🚀 See [FinPal](https://finpal-personal-finance-dashboard.streamlit.app/) in action and test the dashboard yourself! :)
